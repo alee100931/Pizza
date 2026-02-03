@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend+Deca:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #c0392b;
+  --muted: #666;
+}
+
+.title{
+  font-size: 32px;
+}
+
+.nav-logo {
+  font-size: 40px;
+}
+
+html {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+/* make right column image reach footer (viewport-based min-height) */
+html, body {
+  height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    border-bottom: 1px solid #000000;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  background-color: #333; /* navbar background */
+  color: #fff;            /* fallback text color */
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar .nav-logo,
+.nav-menu a {
+  color: #fff; /* ensure links/logo are visible */
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+/* Desktop / default horizontal menu */
+.nav-menu {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-menu a {
+  color: #fff;
+  padding: 0.6rem 0.4rem;
+  display: inline-block;
+}
+
+/* navbar hover */
+.nav-menu a:hover,
+.navbar .nav-logo:hover {
+  background-color: #04AA6D;
+  color: #95ff91;
+  border-radius: 10px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+
+        margin: 2rem 0;
+    }
+}
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Page layout + footer (one authoritative block) */
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* main content grows to push footer down */
+.content, .page-content { flex: 1 0 auto; }
+
+/* footer: non-growing and full-width */
+footer.site-footer {
+  flex: 0 0 auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.section-title h1 {
+  margin:0 auto;
+  color: #fff;
+  max-width: 100%;
+  padding: 16px;
+  background-color: #04AA6D ;
+  border-bottom: #002518;
+}
+body {overflow-x: hidden;}
+
+/* Login card */
+.center-wrap {
+display: flex;
+justify-content: center;
+align-items: center; /* vertical center /
+min-height: calc(100vh - 160px); / leave space for header/footer; adjust 160px if needed */
+padding: 24px 16px;
+}
+
+.login-card{
+  width:360px;
+  background:var(--card);
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(18,38,63,.12);
+  padding:24px;
+  margin:12px;
+}
+
+.login-card h2{
+  margin:0 0 12px 0;
+  font-size:22px;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+label{
+  display:flex;
+  flex-direction:column;
+  font-size:14px;
+  color:var(--muted);
+}
+
+input[type="email"],
+input[type="password"]{
+  margin-top:8px;
+  padding:10px 12px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:15px;
+}
+
+.form-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.button{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:8px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+}
+
+.link-row{
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+  margin-top:6px;
+}
+
+.link-row a{
+  color:var(--accent);
+  text-decoration:none;
+  margin:0 6px;
+}
+
+.footer{
+  padding:24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* cart styles */
+.cart-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #eee;align-items:center}
+.cart-thumb{width:64px;height:48px;object-fit:cover;margin-right:12px;border-radius:6px}
+.cart-info{display:flex;align-items:center;gap:12px}
+.cart-meta{display:flex;flex-direction:column}
+.cart-title{font-weight:600}
+.cart-price{font-size:14px;color:#666}
+.cart-controls{display:flex;align-items:center;gap:8px}
+.cart-qty{width:64px;padding:6px;border-radius:6px;border:1px solid #ddd}
+.cart-sub{min-width:64px;text-align:right}
+.cart-actions{display:flex;gap:8px;margin-top:12px}
+.cart-summary{margin-top:12px;padding-top:12px;border-top:1px solid #eee}
+
+@media (max-width:420px){
+  .login-card{
+    width:100%;
+    margin:0 12px;
+  }
+}
+
+/* Menu styles */
+.menu-hero{
+	text-align:center;
+	margin-bottom:20px;
+	}
+
+.menu-hero h1{font-size:32px;margin-bottom:6px}
+.menu-hero p{color:var(--muted)}
+
+.menu-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px; /* constrain grid width */
+  margin: 0 auto;    /* center the grid within the page */
+  align-items: start;
+  padding: 0 12px;   /* small horizontal padding on narrow screens */
+}
+
+.menu-card{background:var(--card);border-radius:10px;box-shadow:0 8px 18px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column}
+.menu-img{width:100%;height:160px;object-fit:cover}
+.menu-body{padding:14px;display:flex;flex-direction:column;flex:1}
+.menu-title{font-size:18px;margin:0 0 8px}
+.menu-desc{font-size:14px;color:var(--muted);flex:1;margin-bottom:12px}
+.menu-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.price{font-weight:700}
+.button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+.button:hover{opacity:.95}
+
+/* Menu section styles */
+.menu-section {
+  margin: 28px auto;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 12px;
+}
+
+.menu-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.menu-section__header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.menu-section__header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* keep existing .menu-grid but ensure spacing inside sections */
+.menu-section .menu-grid {
+  margin-top: 8px;
+}
+
+/* responsive tweaks */
+@media (max-width:480px){
+  .menu-img{height:140px}
+  .menu-hero h1{font-size:26px}
+}

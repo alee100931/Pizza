@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend+Deca:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title{
+  font-size: 32px;
+}
+
+.nav-logo {
+  font-size: 40px;
+}
+
+html {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+/* make right column image reach footer (viewport-based min-height) */
+html, body {
+  height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    border-bottom: 1px solid #000000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  background-color: #333; /* navbar background */
+  color: #fff;            /* fallback text color */
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar .nav-logo,
+.nav-menu a {
+  color: #fff; /* ensure links/logo are visible */
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+/* Desktop / default horizontal menu */
+.nav-menu {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-menu a {
+  color: #fff;
+  padding: 0.6rem 0.4rem;
+  display: inline-block;
+}
+
+/* navbar hover */
+.nav-menu a:hover,
+.navbar .nav-logo:hover {
+  background-color: #04AA6D;
+  color: #95ff91;
+  border-radius: 10px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+
+        margin: 2rem 0;
+    }
+}
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*Slideshow container*/
+.slideshow-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Added overflow hidden */
+}
+.mySlides {
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Uniform slideshow height and cropping */
+.slideshow-container .mySlides {
+  height: 400px; /* pick desired fixed height */
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop/center to fill */
+  display: block;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #037a4a;
+    transition: background-color 160ms ease;
+}
+
+/* Center and constrain welcome table */
+/* full-bleed welcome table so right column reaches page edge */
+table.welcome {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+table.welcome td.welcome-left {
+  width: 60%;
+  padding: 24px;
+  vertical-align: top;
+  max-width: 900px;
+}
+
+table.welcome td.welcome-right {
+  width: 40%;
+  padding: 0;
+  vertical-align: middle;
+  padding-right: 0;
+}
+
+.welcome-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* mobile: stack */
+@media (max-width: 768px) {
+  table.welcome, table.welcome tr, table.welcome td {
+    display: block;
+    width: 100%;
+  }
+  table.welcome td.welcome-right { margin-top: 16px; }
+  .welcome-image { max-height: 360px; }
+}
+
+/* ensure image fills remaining viewport space below slideshow/header */
+.welcome-image {
+  min-height: max(320px, calc(100vh - 800px));
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive: stack welcome table on small screens */
+@media (max-width: 900px) {
+  /* stop full-bleed behavior and use normal flow */
+  table.welcome {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px auto !important;
+    left: auto !important;
+    right: auto !important;
+    table-layout: auto !important;
+  }
+
+  /* stack rows and cells */
+  table.welcome tr,
+  table.welcome td {
+    display: block;
+    width: 100%;
+  }
+
+  /* full-width left/right blocks */
+  table.welcome td.welcome-left,
+  table.welcome td.welcome-right {
+    width: 100% !important;
+    padding: 16px !important;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* ensure buttons center and wrap nicely */
+  table.welcome td.welcome-left > div,
+  table.welcome td.welcome-left .btn-container {
+    display: flex !important;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .btn { display: inline-block; margin: 6px 4px; }
+
+  /* constrain image height on mobile */
+  .welcome-image {
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+}
