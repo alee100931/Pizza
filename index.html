@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="icon" href="favicon.ico" /> 
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico" /> 
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" /> 
+	<meta name="theme-color" content="#333333" />
+  <title>Home | Tony's - Online Food Ordering Service</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="nav-logo">Tony's</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html" class="active">Home</a></li>
+        <li class="nav-item"><a href="Login.html">Login</a></li>
+        <li class="nav-item"><a href="Deals.html">Deals</a></li>
+        <li class="nav-item"><a href="Menu.html">Menu</a></li>
+        <li class="nav-item"><a href="checkout.html">Checkout</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+  <div class="page-content">
+	<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+  <script>
+window.addEventListener('DOMContentLoaded', () => {
+  window.slideIndex = 1;
+
+  window.showSlides = function (n) {
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+    if (slides.length === 0) return;
+    if (n > slides.length) window.slideIndex = 1;
+    if (n < 1) window.slideIndex = slides.length;
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+    slides[window.slideIndex - 1].style.display = "block";
+    if (dots[window.slideIndex - 1]) dots[window.slideIndex - 1].className += " active";
+  };
+
+  window.plusSlides = function (n) {
+    window.showSlides(window.slideIndex += n);
+    resetSlideTimer();
+  };
+
+  window.currentSlide = function (n) {
+    window.showSlides(window.slideIndex = n);
+    resetSlideTimer();
+  };
+
+  function resetSlideTimer() {
+    clearInterval(window.slideInterval);
+    window.slideInterval = setInterval(() => window.plusSlides(1), 4000);
+  }
+
+  // initial show + autoplay
+  window.showSlides(window.slideIndex);
+  window.slideInterval = setInterval(() => window.plusSlides(1), 4000);
+});
+</script>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="img/pizza.webp" style="width:100%">
+    <div class="text">Delicious Pizza</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img/breadsticks.webp" style="width:100%">
+		<div class="text">Tasty Sides</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img/roll.webp" style="width:100%">
+		<div class="text">Savory Desserts</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<!-- Welcome Table Section -->
+<table class="welcome" role="presentation">
+  <tr>
+    <th colspan="3" style="text-align:center;">
+      <h1>Welcome to Tony's Online Food Ordering Service!</h1>
+    </th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align:center;">
+      <p>Order your favorite pizzas, sides, desserts, and drinks online for pickup or delivery. Enjoy our delicious menu and special deals!</p><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="welcome-left" style="text-align:center;">
+      <h2>Hours + Location</h2>
+      <p>123 Pizza St<br>Flavor Town, USA</p>
+      <p>Mon–Thu: 11:00–22:00<br>Fri–Sat: 11:00–23:00<br>Sun: 12:00–21:00</p>
+      <div style="margin-top:12px; display:flex; gap:16px; justify-content:center; align-items:center; text-align: center;">
+        <a href="Deals.html" class="btn">View Deals</a>
+        <a href="Login.html" class="btn">Order Now</a>
+      </div>
+			<br><h2>
+			Contact Us
+			<p>
+			Phone: (123) 456-7890<br>
+			</p>
+			</h2>
+    </td>
+    <td class="welcome-right">
+      <img src="img/restaurant.jpg" alt="Restaurant Interior" class="welcome-image">
+    </td>
+  </tr>
+</table>
+
+</div><!-- /.page-content -->
+<!-- About Section Footer -->
+  <footer class="content" style="padding-left:16px;" style>
+		<div class="section-title" style=text-align:left;">
+			<h3>About</h3>
+    <h4>Development</h4>
+    <p>This website is intended to be used for a Pizza restaurant looking to expand their reach beyond their physical location. 
+		<br>Steps that were taken to create this site started with a clear list on what was needed to be done before completing a wireframe and then coding.</p>
+    <h4>Design Choices</h4>
+    <p>Aesthetic choices were made to follow the subject of the page. The color palette choices for this website will all be around colors that are found on a pizza. Primary colors like red and green will be complemented with browns and beiges. It’s a limited palette that will work well in being appeasing for the eye. Typography was chosen based on legibility and how appealing and eye catching.</p>
+    <h4>Improvement</h4>
+    <p>I would like to work on the functionality of databases for accounts as well as shopping carts.</p>
+		</div>
+		<br>
+		<div class= "copyright" style="text-align: center;">
+			<p>© 2024 Tony's Online Food Ordering Service</p>
+  </footer>
+</body>
+</html>

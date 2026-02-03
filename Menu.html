@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/menustyle.css">
+  <link rel="icon" href="favicon.ico" />
+  <meta name="theme-color" content="#333333" />
+  <title>Menu | Tony's - Online Food Ordering Service</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">Tony's</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="Login.html">Login</a></li>
+        <li class="nav-item"><a href="Deals.html">Deals</a></li>
+        <li class="nav-item"><a href="Menu.html" class="active">Menu</a></li>
+        <li class="nav-item"><a href="Checkout.html">Checkout</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+ <div class="content">
+    <div class="section-title">
+      <h1>Menu</h1>
+    </div>
+		<br>
+  <main class="content">
+    <section class="menu-hero">
+      <h1>Our Menu</h1>
+      <p>Pizza • Drinks • Desserts — order your favorites</p>
+    </section>
+
+    <section class="menu-section" id="pizza">
+      <div class="menu-section__header">
+        <h2>Pizza</h2>
+        <p>Classic and specialty pizzas made fresh.</p>
+      </div>
+      <div class="menu-grid" aria-label="Pizza items">
+        <article class="menu-card">
+          <img src="img/pepperoni.jpg" alt="Pepperoni Pizza" class="menu-img">
+          <div class="menu-body">
+            <h3 class="menu-title">Pepperoni Pizza</h3>
+            <p class="menu-desc">Classic pepperoni with our signature cheese blend.</p>
+            <div class="menu-meta">
+              <div class="price">$12.99</div>
+              <button class="button add-to-cart"
+                data-id="pizza-pepperoni"
+                data-title="Pepperoni Pizza"
+                data-price="12.99"
+                data-image="img/pepperoni.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="img/margherita.webp" alt="Margherita" class="menu-img">
+          <div class="menu-body">
+            <h3 class="menu-title">Margherita</h3>
+            <p class="menu-desc">Fresh basil, tomato sauce, and mozzarella.</p>
+            <div class="menu-meta">
+              <div class="price">$11.99</div>
+              <button class="button add-to-cart"
+                data-id="pizza-margherita"
+                data-title="Margherita Pizza"
+                data-price="11.99"
+                data-image="img/margherita.webp">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section" id="drinks">
+      <div class="menu-section__header">
+        <h2>Drinks</h2>
+        <p>Cold beverages to pair with your meal.</p>
+      </div>
+      <div class="menu-grid" aria-label="Drinks items">
+        <article class="menu-card">
+          <img src="img/soda.jpg" alt="Soda" class="menu-img">
+          <div class="menu-body">
+            <h3 class="menu-title">Fountain Soda</h3>
+            <p class="menu-desc">Choice of cola, lemon-lime, or root beer.</p>
+            <div class="menu-meta">
+              <div class="price">$1.99</div>
+              <button class="button add-to-cart"
+                data-id="drink-soda"
+                data-title="Fountain Soda"
+                data-price="1.99"
+                data-image="img/soda.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="img/icedtea.jpg" alt="Iced Tea" class="menu-img">
+          <div class="menu-body">
+            <h3 class="menu-title">Iced Tea</h3>
+            <p class="menu-desc">Refreshing brewed iced tea.</p>
+            <div class="menu-meta">
+              <div class="price">$2.49</div>
+              <button class="button add-to-cart"
+                data-id="drink-icedtea"
+                data-title="Iced Tea"
+                data-price="2.49"
+                data-image="img/icedtea.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section" id="desserts">
+      <div class="menu-section__header">
+        <h2>Desserts</h2>
+        <p>Sweet finishes to complete your order.</p>
+      </div>
+      <div class="menu-grid" aria-label="Dessert items">
+        <article class="menu-card">
+          <img src="img/cinnabon.jpg" alt="Cinnabon Mini Rolls" class="menu-img">
+          <div class="menu-body">
+            <h3 class="menu-title">Cinnabon Mini Rolls</h3>
+            <p class="menu-desc">Warm, cinnamony mini rolls with icing.</p>
+            <div class="menu-meta">
+              <div class="price">$3.99</div>
+              <button class="button add-to-cart"
+                data-id="dessert-cinnabon"
+                data-title="Cinnabon Mini Rolls"
+                data-price="3.99"
+                data-image="img/cinnabon.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="img/icecream.jpg" alt="Ice Cream" class="menu-img">
+          <div class="menu-body">
+            <h3 class="menu-title">Vanilla Ice Cream</h3>
+            <p class="menu-desc">Creamy single scoop vanilla.</p>
+            <div class="menu-meta">
+              <div class="price">$2.99</div>
+              <button class="button add-to-cart"
+                data-id="dessert-icecream"
+                data-title="Vanilla Ice Cream"
+                data-price="2.99"
+                data-image="img/icecream.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="copyright" style="text-align:center;">
+      <p>© 2024 Tony's Online Food Ordering Service</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger) hamburger.addEventListener('click', () => { navMenu.classList.toggle('active'); hamburger.classList.toggle('active'); });
+  </script>
+
+  <script src="js/cart.js" defer></script>
+</body>
+</html>

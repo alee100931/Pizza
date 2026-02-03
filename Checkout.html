@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="css/checkoutstyle.css" >
+  <meta name="theme-color" content="#333333" />
+  <title>Checkout | Tony's</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">Tony's</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html" class="active">Home</a></li>
+        <li class="nav-item"><a href="Login.html">Login</a></li>
+        <li class="nav-item"><a href="Deals.html">Deals</a></li>
+        <li class="nav-item"><a href="Menu.html">Menu</a></li>
+        <li class="nav-item"><a href="Checkout.html">Checkout</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+    }
+  </script>
+<div class="section-title">
+	<h1>Checkout</h1>
+</div>
+<main class="content checkout-main">
+  <section class="checkout-main__content">
+
+      <div id="cart-container" aria-live="polite">
+        <!-- cart.js will render cart rows and summary here -->
+      </div>
+    </section>
+  <div class="center-wrap">
+    <aside class="checkout-aside">
+      <div class="login-card" style="padding:18px;">
+        <h2>Order & Shipping</h2>
+        <form id="checkout-form">
+          <label>
+            Full name
+            <input type="text" id="cust-name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" id="cust-email" required>
+          </label>
+          <label>
+            Phone
+            <input type="tel" id="cust-phone" required>
+          </label>
+          <label>
+            Address
+            <input type="text" id="cust-address" required>
+          </label>
+
+          <h3>Payment</h3>
+          <label>
+            Card number
+            <input type="text" id="card-number" placeholder="4111 1111 1111 1111" required>
+          </label>
+          <div class="card-row">
+            <label>
+              Expiration
+              <input type="text" id="card-exp" placeholder="MM/YY" required maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" class="small-input">
+            </label>
+            <label>
+              CVC
+              <input type="text" id="card-cvc" placeholder="123" required maxlength="4" pattern="\d{3,4}" class="small-input">
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="button">Place Order</button>
+            <button type="button" id="clear-cart" class="button secondary">Clear Cart</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-title" style="text-align:left;">
+      <h3>About</h3>
+      <h4>Development</h4>
+      <p>This website is intended to be used for a Pizza restaurant looking to expand their reach beyond their physical location. 
+      <br>Steps that were taken to create this site started with a clear list on what was needed to be done before completing a wireframe and then coding.</p>
+      <h4>Design Choices</h4>
+      <p>Aesthetic choices were made to follow the subject of the page. The color palette choices for this website will all be around colors that are found on a pizza. Primary colors like red and green will be complemented with browns and beiges. It’s a limited palette that will work well in being appeasing for the eye. Typography was chosen based on legibility and how appealing and eye catching.</p>
+      <h4>Improvement</h4>
+      <p>I would like to work on the functionality of databases for accounts as well as shopping carts.</p>
+    </div>
+    <div style="text-align:center;margin:18px 0;">© 2024 Tony's Online Food Ordering Service</div>
+  </footer>
+
+  <script src="js/cart.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('checkout-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const cart = window.getCartItems();
+        if (!cart || !cart.length) {
+          alert('Your cart is empty.');
+          return;
+        }
+        const order = {
+          customer: {
+            name: document.getElementById('cust-name').value.trim(),
+            email: document.getElementById('cust-email').value.trim(),
+            phone: document.getElementById('cust-phone').value.trim(),
+            address: document.getElementById('cust-address').value.trim(),
+          },
+          payment: {
+            card: document.getElementById('card-number').value.trim(),
+            exp: document.getElementById('card-exp').value.trim(),
+            cvc: document.getElementById('card-cvc').value.trim(),
+          },
+          items: cart,
+          total: window.cartTotal().toFixed(2),
+          placedAt: new Date().toISOString()
+        };
+
+        // Demo action: show order summary and clear cart.
+        console.log('ORDER', order);
+        alert('Order placed — total $' + order.total + '\nThank you, ' + order.customer.name + '!');
+        window.cartClear();
+        // Optionally redirect to confirmation page:
+        // location.href = 'order-confirmation.html';
+      });
+
+      const clearBtn = document.getElementById('clear-cart');
+      clearBtn.addEventListener('click', () => {
+        if (confirm('Clear the cart?')) {
+          window.cartClear();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

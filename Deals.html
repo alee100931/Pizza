@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/menustyle.css">
+  <link rel="icon" href="favicon.ico" />
+  <meta name="theme-color" content="#333333" />
+  <title>Menu | Tony's - Online Food Ordering Service</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">Tony's</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="Login.html">Login</a></li>
+        <li class="nav-item"><a href="Deals.html">Deals</a></li>
+        <li class="nav-item"><a href="Menu.html" class="active">Menu</a></li>
+        <li class="nav-item"><a href="Checkout.html">Checkout</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+ <div class="content">
+    <div class="section-title">
+      <h1>Deals</h1>
+    </div>
+		<br>
+  <main class="content">
+    <section class="menu-hero">
+      <h1>Our Menu</h1>
+      <p>Choose from our most popular deals and meals.</p>
+    </section>
+
+    <section class="menu-grid" aria-label="Menu items">
+      <article class="menu-card">
+        <img src="img/5lineup.jpg" alt="$5 Lineup" class="menu-img">
+        <div class="menu-body">
+          <h3 class="menu-title">$5 Lineup Menu</h3>
+          <p class="menu-desc">Medium 1-topping pizzas, wings, Cinnabon mini rolls and more — $5 each when you get two or more.</p>
+          <div class="menu-meta">
+            <div class="price">$5.00</div>
+            <button class="button add-to-cart"
+              data-id="deal-5lineup"
+              data-title="$5 Lineup Menu"
+              data-price="5.00"
+              data-image="img/5lineup.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/7large.webp" alt="$7.99 Large 2-Topping" class="menu-img">
+        <div class="menu-body">
+          <h3 class="menu-title">$7.99 Large 2-Topping</h3>
+          <p class="menu-desc">Large 2-topping pizza — online special. Upgrade to specialty pizzas for a small upcharge.</p>
+          <div class="menu-meta">
+            <div class="price">$7.99</div>
+            <button class="button add-to-cart"
+              data-id="deal-7large"
+              data-title="$7.99 Large 2-Topping"
+              data-price="7.99"
+              data-image="img/7large.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/dinnerbox.webp" alt="Dinner Box" class="menu-img">
+        <div class="menu-body">
+          <h3 class="menu-title">Dinner Box</h3>
+          <p class="menu-desc">One medium 1-topping pizza, five breadsticks, and 10 cinnamon sticks — convenient family box.</p>
+          <div class="menu-meta">
+            <div class="price">$14.99</div>
+            <button class="button add-to-cart"
+              data-id="deal-dinnerbox"
+              data-title="Dinner Box"
+              data-price="14.99"
+              data-image="img/dinnerbox.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+<!-- About Section Footer -->
+  <footer class="site-footer">
+  	<div class="section-title" style="text-align:left;">
+    	<h3>About</h3>
+    	<h4>Development</h4>
+    	<p>This website is intended to be used for a Pizza restaurant looking to expand their reach beyond their physical location. 
+    	<br>Steps that were taken to create this site started with a clear list on what was needed to be done before completing a wireframe and then coding.</p>
+    	<h4>Design Choices</h4>
+    	<p>Aesthetic choices were made to follow the subject of the page. The color palette choices for this website will all be around colors that are found on a pizza. Primary colors like red and green will be complemented with browns and beiges. It’s a limited palette that will work well in being appeasing for the eye. Typography was chosen based on legibility and how appealing and eye catching.</p>
+    	<h4>Improvement</h4>
+    	<p>I would like to work on the functionality of databases for accounts as well as shopping carts.</p>
+  	</div>
+		<br>
+		<div class= "copyright" style="text-align: center;">
+			<p>© 2024 Tony's Online Food Ordering Service</p>
+</footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger) hamburger.addEventListener('click', () => { navMenu.classList.toggle('active'); hamburger.classList.toggle('active'); });
+  </script>
+
+  <script src="js/cart.js" defer></script>
+</body>
+</html>

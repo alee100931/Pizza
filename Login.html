@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="css/loginstyle.css" >
+	<link rel="icon" href="favicon.ico" /> 
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico" /> 
+	<meta name="theme-color" content="#333333" />
+  <title>Home | Tony's - Online Food Ordering Service</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">Tony's</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html" class="active">Home</a></li>
+        <li class="nav-item"><a href="Login.html">Login</a></li>
+        <li class="nav-item"><a href="Deals.html">Deals</a></li>
+        <li class="nav-item"><a href="Menu.html">Menu</a></li>
+        <li class="nav-item"><a href="checkout.html">Checkout</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+	<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+  
+ <div class="content">
+    <div class="section-title">
+      <h1>Login</h1>
+    </div>
+
+    <div class="center-wrap">
+      <div class="login-card" role="region" aria-labelledby="signin-title">
+        <h2 id="signin-title">Sign in to your account</h2>
+
+        <form id="loginForm" novalidate>
+          <label>
+            Email address
+            <input type="email" name="email" id="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Password
+            <input type="password" name="password" id="password" placeholder="Enter your password" required minlength="6">
+          </label>
+
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" id="remember"> Remember me
+            </label>
+
+            <button type="submit" class="button">Sign In</button>
+          </div>
+
+          <div class="link-row">
+            <a href="Register.html">Create an account</a> · <a href="#">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- About Section Footer -->
+  <footer class="site-footer">
+  	<div class="section-title" style="text-align:left;">
+    	<h3>About</h3>
+    	<h4>Development</h4>
+    	<p>This website is intended to be used for a Pizza restaurant looking to expand their reach beyond their physical location. 
+    	<br>Steps that were taken to create this site started with a clear list on what was needed to be done before completing a wireframe and then coding.</p>
+    	<h4>Design Choices</h4>
+    	<p>Aesthetic choices were made to follow the subject of the page. The color palette choices for this website will all be around colors that are found on a pizza. Primary colors like red and green will be complemented with browns and beiges. It’s a limited palette that will work well in being appeasing for the eye. Typography was chosen based on legibility and how appealing and eye catching.</p>
+    	<h4>Improvement</h4>
+    	<p>I would like to work on the functionality of databases for accounts as well as shopping carts.</p>
+  	</div>
+		<br>
+		<div class= "copyright" style="text-align: center;">
+			<p>© 2024 Tony's Online Food Ordering Service</p>
+</footer>
+</body>
+</html>
